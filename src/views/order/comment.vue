@@ -5,7 +5,7 @@
     <div class="deliver-comment">
       <div class="deliver-info">
         <div class="avatar">
-          <img src="http://img.go007.com/2016/05/21/c48d2b4e639e5255_1.jpg">
+          <img src="http://5b0988e595225.cdn.sohucs.com/images/20190706/b4b3e0f0244849a59c2ef114308fae2c.jpeg">
         </div>
         <div class="info-container">
           <span class="deliver-type">美团快送</span>
@@ -47,7 +47,7 @@
         </div>
         <label class="upload">
           <i class="iconfont upload-icon">&#xe782;</i>
-          <input id="file" type="file" @change="fileUpload($event)" style="display: none;">
+          <input id="file" type="file" ref="referenceUpload" @change="fileUpload($event)" style="display: none;">
         </label>
         <div class="upload-description" v-show="!uploadList.length">
           <h3>上传图片</h3>
@@ -122,6 +122,7 @@
               this.uploadList.push(config.domain + upResponse.data.key);
               this.loading = false;
             })
+            this.$refs.referenceUpload.value = null;
           } else {
             this.alertText = response.data.message;
             this.showTip = true;
