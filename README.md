@@ -26,7 +26,7 @@
 
 
 ## 技术栈 ##
-- Webpack-cli搭建项目
+- vue-cli搭建项目
 - Vue全家桶(vue+vuex+vue-router)
 - CSS预处理器SCSS
 - axios与后端进行请求数据
