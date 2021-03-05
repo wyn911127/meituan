@@ -11,7 +11,7 @@ import Star from '@/components/star'
 import AlertTip from '@/components/alertTip'
 import Loading from '@/components/loading'
 import FastClick from 'fastclick'
-
+import VueCookies from 'vue-cookies'
 //全局注册组件
 Vue.component('v-head', Head);
 Vue.component('v-bottom', Bottom);
@@ -20,7 +20,7 @@ Vue.component('alert-tip', AlertTip);
 Vue.component('v-loading',Loading);
 
 Vue.config.productionTip = false
-Vue.use(require('vue-cookies'))
+Vue.use(VueCookies)
 // set default config
 Vue.$cookies.config('7d')
 
