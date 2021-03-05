@@ -1,8 +1,8 @@
 <!--选择评分-->
 <template>
   <div class="star-container">
-    <i class="iconfont star active" v-for="item in score" @click="makeScore(item)" :key="item">&#xe70a;</i>
-    <i class="iconfont star no-active" v-for="item in (5 - score)" @click="makeScore(item + score)" :key="item">&#xe70a;</i>
+    <i :class='["iconfont", "star",item? "active":"no-active"]' v-for="(item,index) in score" @click="makeScore(item,index)" :key="index">&#xe70a;</i>
+   
   </div>
 </template>
 
@@ -10,13 +10,18 @@
   export default {
     data(){
       return {
-        score:1   //默认1分
+        score:[1,0,0,0,0]   //默认1分
       }
     },
     methods:{
-      makeScore(score){
-        this.score = score;
-        this.$emit('makeScore', score);
+      makeScore(item,index){
+        let scoreIndex = item == 1? 0 : 1; 
+        this.score.splice(index,1,scoreIndex)
+        let sum = 0;
+        this.score.forEach(function(item){
+          sum += item;
+        })
+        this.$emit('makeScore', sum);
       }
     }
   }
