@@ -1,20 +1,15 @@
 
 
-import Vue from 'vue'
-
-const userInfo = 'mt-username';
+const userInfo = 'mt-username'
 
 export function getInfo() {
-  // return localStorage.getItem(userInfo)
-  return Vue.$cookies.get(userInfo)
+  return localStorage.getItem(userInfo)
 }
 
 export function setInfo(username) {
-  // return localStorage.setItem(userInfo, username)
-  return Vue.$cookies.set(userInfo, username)
+  return localStorage.setItem(userInfo, username)
 }
 
 export function removeInfo() {
-  // return localStorage.removeItem(userInfo)
-  return Vue.$cookies.remove(userInfo)
+  return localStorage.removeItem(userInfo)
 }
