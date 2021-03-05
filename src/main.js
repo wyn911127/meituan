@@ -31,7 +31,7 @@ if ('addEventListener' in document) {
 }
 
 
-/* eslint-disable no-new */
+
 new Vue({
     router,
     store,
